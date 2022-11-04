@@ -1,0 +1,8 @@
+<launch>
+    <include file='$(find kinect2_bridge)/launch/kinect2_bridge.launch'/>
+    <node pkg="percept_fusion" name="yolo_depth_position" type="track.py" output="screen">
+    </node>
+    <!-- <node pkg="percept_fusion" name="track_people" type="track_people.py" output="screen">
+    </node> -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find percept_fusion)/track.rviz" required="true" />  
+</launch>
